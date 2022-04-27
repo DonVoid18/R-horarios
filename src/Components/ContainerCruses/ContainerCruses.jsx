@@ -65,7 +65,7 @@ function ContainerCruses({ courses }) {
       {coursesCrosses("2").length !== 0 ? (
         <div className="container_crosses crosses_martes">
           <div className="title_container_crosses">martes</div>
-          {coursesCrosses("1").map((value) => (
+          {coursesCrosses("2").map((value) => (
             <span className="value_course_crosses" key={value.id}>
               <span className="course_grup_crosses">
                 <span className="name_grup_crosses">Cursos</span>
@@ -84,8 +84,8 @@ function ContainerCruses({ courses }) {
       )}
       {coursesCrosses("3").length !== 0 ? (
         <div className="container_crosses crosses_miercoles">
-          <div className="title_container_crosses">miercoles</div>
-          {coursesCrosses("1").map((value) => (
+          <div className="title_container_crosses">miércoles</div>
+          {coursesCrosses("3").map((value) => (
             <span className="value_course_crosses" key={value.id}>
               <span className="course_grup_crosses">
                 <span className="name_grup_crosses">Cursos</span>
@@ -105,7 +105,7 @@ function ContainerCruses({ courses }) {
       {coursesCrosses("4").length !== 0 ? (
         <div className="container_crosses crosses_jueves">
           <div className="title_container_crosses">jueves</div>
-          {coursesCrosses("1").map((value) => (
+          {coursesCrosses("4").map((value) => (
             <span className="value_course_crosses" key={value.id}>
               <span className="course_grup_crosses">
                 <span className="name_grup_crosses">Cursos</span>
@@ -125,7 +125,7 @@ function ContainerCruses({ courses }) {
       {coursesCrosses("5").length !== 0 ? (
         <div className="container_crosses crosses_viernes">
           <div className="title_container_crosses">viernes</div>
-          {coursesCrosses("1").map((value) => (
+          {coursesCrosses("5").map((value) => (
             <span className="value_course_crosses" key={value.id}>
               <span className="course_grup_crosses">
                 <span className="name_grup_crosses">Cursos</span>
@@ -144,8 +144,8 @@ function ContainerCruses({ courses }) {
       )}
       {coursesCrosses("6").length !== 0 ? (
         <div className="container_crosses crosses_sabado">
-          <div className="title_container_crosses">sabado</div>
-          {coursesCrosses("1").map((value) => (
+          <div className="title_container_crosses">sábado</div>
+          {coursesCrosses("6").map((value) => (
             <span className="value_course_crosses" key={value.id}>
               <span className="course_grup_crosses">
                 <span className="name_grup_crosses">Cursos</span>
@@ -165,7 +165,7 @@ function ContainerCruses({ courses }) {
       {coursesCrosses("7").length !== 0 ? (
         <div className="container_crosses crosses_domingo">
           <div className="title_container_crosses">domingo</div>
-          {coursesCrosses("1").map((value) => (
+          {coursesCrosses("7").map((value) => (
             <span className="value_course_crosses" key={value.id}>
               <span className="course_grup_crosses">
                 <span className="name_grup_crosses">Cursos</span>
