@@ -8,7 +8,7 @@
 Este proyecto está creado con React utilizando <a href="https://vitejs.dev/">Vite</a> como empaquetador de archivos.
 </p>
 <p align="center">
-  <a href="https://donvoid18.github.io/R-tareas/" target="_blank">
+  <a href="https://donvoid18.github.io/R-horarios/" target="_blank">
     <img src="./src/horarios-portada.png" alt="Horarios UNHE" title="Horarios UNHE" />
   </a>
 </p>
