@@ -33,7 +33,7 @@ function ContainerCruses({ courses }) {
           id: uuidv4(),
           c_1: newCourses[i].name_course,
           c_2: newCourses[i + 1].name_course,
-          time: f_course - o_course
+          time: f_course - o_course,
         });
       }
     }
@@ -41,28 +41,147 @@ function ContainerCruses({ courses }) {
   };
   return (
     <div className="container_courses_crosses">
-      <p>Los cruces de horarios son los siguientes: </p>
-      <div className="container_crosses crosses_lunes">
-        <div>
-          <strong>lunes</strong>
+      <div className="container_title_courses_crosses">cruce de horarios</div>
+      {coursesCrosses("1").length !== 0 ? (
+        <div className="container_crosses crosses_lunes">
+          <div className="title_container_crosses">lunes</div>
+          {coursesCrosses("1").map((value) => (
+            <span className="value_course_crosses" key={value.id}>
+              <span className="course_grup_crosses">
+                <span className="name_grup_crosses">Cursos</span>
+                <span className="course_one_crosses">{value.c_1}</span>
+                <span className="course_two_crosses">{value.c_2}</span>
+              </span>
+              <span className="time_crosses_value">
+                <span className="name_time_crosses">Tiempo</span>
+                {value.time} m
+              </span>
+            </span>
+          ))}
         </div>
-
-        {coursesCrosses("1").map((value, index) => (
-          <span
-            key={value.id}
-          >{`${value.c_1} tiene cruce con ${value.c_2} un tiempo de ${value.time} minutos`}</span>
-        ))}
-      </div>
-      <div className="container_crosses crosses_martes">
-        <div>
-          <strong>martes</strong>
+      ) : (
+        ""
+      )}
+      {coursesCrosses("2").length !== 0 ? (
+        <div className="container_crosses crosses_martes">
+          <div className="title_container_crosses">martes</div>
+          {coursesCrosses("1").map((value) => (
+            <span className="value_course_crosses" key={value.id}>
+              <span className="course_grup_crosses">
+                <span className="name_grup_crosses">Cursos</span>
+                <span className="course_one_crosses">{value.c_1}</span>
+                <span className="course_two_crosses">{value.c_2}</span>
+              </span>
+              <span className="time_crosses_value">
+                <span className="name_time_crosses">Tiempo</span>
+                {value.time} m
+              </span>
+            </span>
+          ))}
         </div>
-        {coursesCrosses("2").map((value, index) => (
-          <span
-            key={value.id}
-          >{`${value.c_1} tiene cruce con ${value.c_2} un tiempo de ${value.time} minutos`}</span>
-        ))}
-      </div>
+      ) : (
+        ""
+      )}
+      {coursesCrosses("3").length !== 0 ? (
+        <div className="container_crosses crosses_miercoles">
+          <div className="title_container_crosses">miercoles</div>
+          {coursesCrosses("1").map((value) => (
+            <span className="value_course_crosses" key={value.id}>
+              <span className="course_grup_crosses">
+                <span className="name_grup_crosses">Cursos</span>
+                <span className="course_one_crosses">{value.c_1}</span>
+                <span className="course_two_crosses">{value.c_2}</span>
+              </span>
+              <span className="time_crosses_value">
+                <span className="name_time_crosses">Tiempo</span>
+                {value.time} m
+              </span>
+            </span>
+          ))}
+        </div>
+      ) : (
+        ""
+      )}
+      {coursesCrosses("4").length !== 0 ? (
+        <div className="container_crosses crosses_jueves">
+          <div className="title_container_crosses">jueves</div>
+          {coursesCrosses("1").map((value) => (
+            <span className="value_course_crosses" key={value.id}>
+              <span className="course_grup_crosses">
+                <span className="name_grup_crosses">Cursos</span>
+                <span className="course_one_crosses">{value.c_1}</span>
+                <span className="course_two_crosses">{value.c_2}</span>
+              </span>
+              <span className="time_crosses_value">
+                <span className="name_time_crosses">Tiempo</span>
+                {value.time} m
+              </span>
+            </span>
+          ))}
+        </div>
+      ) : (
+        ""
+      )}
+      {coursesCrosses("5").length !== 0 ? (
+        <div className="container_crosses crosses_viernes">
+          <div className="title_container_crosses">viernes</div>
+          {coursesCrosses("1").map((value) => (
+            <span className="value_course_crosses" key={value.id}>
+              <span className="course_grup_crosses">
+                <span className="name_grup_crosses">Cursos</span>
+                <span className="course_one_crosses">{value.c_1}</span>
+                <span className="course_two_crosses">{value.c_2}</span>
+              </span>
+              <span className="time_crosses_value">
+                <span className="name_time_crosses">Tiempo</span>
+                {value.time} m
+              </span>
+            </span>
+          ))}
+        </div>
+      ) : (
+        ""
+      )}
+      {coursesCrosses("6").length !== 0 ? (
+        <div className="container_crosses crosses_sabado">
+          <div className="title_container_crosses">sabado</div>
+          {coursesCrosses("1").map((value) => (
+            <span className="value_course_crosses" key={value.id}>
+              <span className="course_grup_crosses">
+                <span className="name_grup_crosses">Cursos</span>
+                <span className="course_one_crosses">{value.c_1}</span>
+                <span className="course_two_crosses">{value.c_2}</span>
+              </span>
+              <span className="time_crosses_value">
+                <span className="name_time_crosses">Tiempo</span>
+                {value.time} m
+              </span>
+            </span>
+          ))}
+        </div>
+      ) : (
+        ""
+      )}
+      {coursesCrosses("7").length !== 0 ? (
+        <div className="container_crosses crosses_domingo">
+          <div className="title_container_crosses">domingo</div>
+          {coursesCrosses("1").map((value) => (
+            <span className="value_course_crosses" key={value.id}>
+              <span className="course_grup_crosses">
+                <span className="name_grup_crosses">Cursos</span>
+                <span className="course_one_crosses">{value.c_1}</span>
+                <span className="course_two_crosses">{value.c_2}</span>
+              </span>
+              <span className="time_crosses_value">
+                <span className="name_time_crosses">Tiempo</span>
+                {value.time} m
+              </span>
+            </span>
+          ))}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }
