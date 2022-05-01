@@ -113,6 +113,7 @@ function FormDate({ sendCourse }) {
             name="week_course"
             value="1"
             onChange={handleChange}
+            checked={form.week_course === "1" ? true : false}
           />
           <label htmlFor="lunes" className="day_week">
             L
@@ -124,6 +125,7 @@ function FormDate({ sendCourse }) {
             name="week_course"
             value="2"
             onChange={handleChange}
+            checked={form.week_course === "2" ? true : false}
           />
           <label htmlFor="martes" className="day_week">
             M
@@ -135,6 +137,7 @@ function FormDate({ sendCourse }) {
             name="week_course"
             value="3"
             onChange={handleChange}
+            checked={form.week_course === "3" ? true : false}
           />
           <label htmlFor="miercoles" className="day_week">
             M
@@ -146,6 +149,7 @@ function FormDate({ sendCourse }) {
             name="week_course"
             value="4"
             onChange={handleChange}
+            checked={form.week_course === "4" ? true : false}
           />
           <label htmlFor="jueves" className="day_week">
             J
@@ -157,6 +161,7 @@ function FormDate({ sendCourse }) {
             name="week_course"
             value="5"
             onChange={handleChange}
+            checked={form.week_course === "5" ? true : false}
           />
           <label htmlFor="viernes" className="day_week">
             V
@@ -168,6 +173,7 @@ function FormDate({ sendCourse }) {
             name="week_course"
             value="6"
             onChange={handleChange}
+            checked={form.week_course === "6" ? true : false}
           />
           <label htmlFor="sabado" className="day_week">
             S
@@ -179,6 +185,7 @@ function FormDate({ sendCourse }) {
             name="week_course"
             value="7"
             onChange={handleChange}
+            checked={form.week_course === "7" ? true : false}
           />
           <label htmlFor="domingo" className="day_week">
             D

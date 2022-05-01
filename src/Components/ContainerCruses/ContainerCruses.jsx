@@ -54,7 +54,12 @@ function ContainerCruses({ courses }) {
               </span>
               <span className="time_crosses_value">
                 <span className="name_time_crosses">Tiempo</span>
-                {value.time} m
+                {parseInt(value.time / 60) !== 0
+                  ? parseInt(value.time / 60) + "h"
+                  : ""}{" "}
+                {parseInt(value.time % 60) !== 0
+                  ? parseInt(value.time % 60) + "m"
+                  : ""}
               </span>
             </span>
           ))}
@@ -74,7 +79,12 @@ function ContainerCruses({ courses }) {
               </span>
               <span className="time_crosses_value">
                 <span className="name_time_crosses">Tiempo</span>
-                {value.time} m
+                {parseInt(value.time / 60) !== 0
+                  ? parseInt(value.time / 60) + "h"
+                  : ""}{" "}
+                {parseInt(value.time % 60) !== 0
+                  ? parseInt(value.time % 60) + "m"
+                  : ""}
               </span>
             </span>
           ))}
@@ -94,7 +104,12 @@ function ContainerCruses({ courses }) {
               </span>
               <span className="time_crosses_value">
                 <span className="name_time_crosses">Tiempo</span>
-                {value.time} m
+                {parseInt(value.time / 60) !== 0
+                  ? parseInt(value.time / 60) + "h"
+                  : ""}{" "}
+                {parseInt(value.time % 60) !== 0
+                  ? parseInt(value.time % 60) + "m"
+                  : ""}
               </span>
             </span>
           ))}
@@ -114,7 +129,12 @@ function ContainerCruses({ courses }) {
               </span>
               <span className="time_crosses_value">
                 <span className="name_time_crosses">Tiempo</span>
-                {value.time} m
+                {parseInt(value.time / 60) !== 0
+                  ? parseInt(value.time / 60) + "h"
+                  : ""}{" "}
+                {parseInt(value.time % 60) !== 0
+                  ? parseInt(value.time % 60) + "m"
+                  : ""}
               </span>
             </span>
           ))}
@@ -134,7 +154,12 @@ function ContainerCruses({ courses }) {
               </span>
               <span className="time_crosses_value">
                 <span className="name_time_crosses">Tiempo</span>
-                {value.time} m
+                {parseInt(value.time / 60) !== 0
+                  ? parseInt(value.time / 60) + "h"
+                  : ""}{" "}
+                {parseInt(value.time % 60) !== 0
+                  ? parseInt(value.time % 60) + "m"
+                  : ""}
               </span>
             </span>
           ))}
@@ -154,7 +179,12 @@ function ContainerCruses({ courses }) {
               </span>
               <span className="time_crosses_value">
                 <span className="name_time_crosses">Tiempo</span>
-                {value.time} m
+                {parseInt(value.time / 60) !== 0
+                  ? parseInt(value.time / 60) + "h"
+                  : ""}{" "}
+                {parseInt(value.time % 60) !== 0
+                  ? parseInt(value.time % 60) + "m"
+                  : ""}
               </span>
             </span>
           ))}
@@ -174,7 +204,12 @@ function ContainerCruses({ courses }) {
               </span>
               <span className="time_crosses_value">
                 <span className="name_time_crosses">Tiempo</span>
-                {value.time} m
+                {parseInt(value.time / 60) !== 0
+                  ? parseInt(value.time / 60) + "h"
+                  : ""}{" "}
+                {parseInt(value.time % 60) !== 0
+                  ? parseInt(value.time % 60) + "m"
+                  : ""}
               </span>
             </span>
           ))}

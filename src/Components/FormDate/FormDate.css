@@ -66,6 +66,9 @@
 .container_input input[type="radio"]:checked + .day_week{
     background-color: var(--color-3);
 }
+.container_input input[type="radio"]:hover + .day_week{
+    background-color: var(--color-3);
+}
 .container_button_send{
     height: 50px;
     display: flex;
@@ -81,6 +84,11 @@
     transition: .3s linear;
     background: var(--color-1);
     color: var(--text-color-2);
+}
+.button_send:hover{
+    color: var(--text-color-1);
+    background:  var(--color-3);
+    box-shadow: 2px 2px 10px 0px var(--color-5);
 }
 .button_send:active{
     transform: scale(.9, .9);

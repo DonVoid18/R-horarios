@@ -1,5 +1,6 @@
 .container_course {
   max-width: 200px;
+  height: 120px;
   background-color: var(--color-5);
 
   border-radius: var(--border-radius-2);
