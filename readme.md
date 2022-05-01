@@ -9,7 +9,7 @@ Este proyecto está creado con React utilizando <a href="https://vitejs.dev/">Vi
 </p>
 <p align="center">
   <a href="https://donvoid18.github.io/R-horarios/" target="_blank">
-    <img src="./src/horarios-portada.png" alt="Horarios UNHE" title="Horarios UNHE" />
+    <img src="./src/portada_readme.png" alt="Horarios UNHE" title="Horarios UNHE" />
   </a>
 </p>
 <p align="left">
