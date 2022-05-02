@@ -7,8 +7,10 @@ function FormDate({ sendCourse }) {
     name_course: "",
     hours_open_course: "",
     minutes_open_course: "",
+    type_schedule_open: "1",
     hours_finish_course: "",
     minutes_finish_course: "",
+    type_schedule_finish: "1",
     week_course: undefined,
   });
   const handleChange = (e) => {
@@ -20,12 +22,35 @@ function FormDate({ sendCourse }) {
   const sendForm = (e) => {
     e.preventDefault();
     // hacer la validación de los horarios (el horario de finalización debe ser mayor que el horario de inico)
+    // convertir a formato 24 horas
+    let formatOpen24 =
+      form.type_schedule_open == "1"
+        ? form.hours_open_course == "12"
+          ? 0
+          : parseInt(form.hours_open_course)
+        : form.hours_open_course == "12"
+        ? 12
+        : parseInt(form.hours_open_course) + 12;
+    let formatFinish24 =
+      form.type_schedule_finish == "1"
+        ? form.hours_finish_course == "12"
+          ? 0
+          : parseInt(form.hours_finish_course)
+        : form.hours_finish_course == "12"
+        ? 12
+        : parseInt(form.hours_finish_course) + 12;
+
     let validationForm = true;
     if (
-      parseInt(form.hours_open_course) * 60 +
-        parseInt(form.minutes_open_course) >
-      parseInt(form.hours_finish_course) * 60 +
-        parseInt(form.minutes_finish_course)
+      parseInt(form.type_schedule_finish) < parseInt(form.type_schedule_open)
+    ) {
+      alert("Los horarios no están correctamente inscritos.");
+      validationForm = false;
+    }
+
+    if (
+      formatOpen24 * 60 + parseInt(form.minutes_open_course) >
+      formatFinish24 * 60 + parseInt(form.minutes_finish_course)
     ) {
       alert("La hora final no debe ser menor a la inicial");
       validationForm = false;
@@ -40,8 +65,10 @@ function FormDate({ sendCourse }) {
         name_course: "",
         hours_open_course: "",
         minutes_open_course: "",
+        type_schedule_open: "1",
         hours_finish_course: "",
         minutes_finish_course: "",
+        type_schedule_finish: "1",
         week_course: undefined,
       });
     }
@@ -69,7 +96,7 @@ function FormDate({ sendCourse }) {
           <ButtonHour
             name={"hours_open_course"}
             min={0}
-            max={23}
+            max={12}
             cambio={handleChange}
             textPlace={"hh"}
             value={form.hours_open_course}
@@ -83,13 +110,23 @@ function FormDate({ sendCourse }) {
             textPlace={"mm"}
             value={form.minutes_open_course}
           ></ButtonHour>
+          :
+          <select
+            name="type_schedule_open"
+            className="select_format"
+            onChange={handleChange}
+            value={form.type_schedule_open}
+          >
+            <option value="1">AM</option>
+            <option value="2">PM</option>
+          </select>
         </div>
         <div className="container_input">
           <span className="name_input_container">Finaliza</span>
           <ButtonHour
             name={"hours_finish_course"}
             min={0}
-            max={23}
+            max={12}
             cambio={handleChange}
             textPlace={"hh"}
             value={form.hours_finish_course}
@@ -103,6 +140,16 @@ function FormDate({ sendCourse }) {
             textPlace={"mm"}
             value={form.minutes_finish_course}
           ></ButtonHour>
+          :
+          <select
+            name="type_schedule_finish"
+            className="select_format"
+            onChange={handleChange}
+            value={form.type_schedule_finish}
+          >
+            <option value="1">AM</option>
+            <option value="2">PM</option>
+          </select>
         </div>
         <div className="container_input">
           <span className="name_input_container">Día de la semana</span>

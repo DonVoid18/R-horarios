@@ -5,11 +5,28 @@ function ContainerCruses({ courses }) {
     let newCourses = courses
       .filter((course) => course.week_course === dayWeek)
       .sort((a, b) => {
-        if (parseInt(a.hours_open_course) < parseInt(b.hours_open_course)) {
+        let formatOpen24 =
+          a.type_schedule_open == "1"
+            ? a.hours_open_course == "12"
+              ? 0
+              : parseInt(a.hours_open_course)
+            : a.hours_open_course == "12"
+            ? 12
+            : parseInt(a.hours_open_course) + 12;
+        let formatFinish24 =
+          b.type_schedule_open == "1"
+            ? b.hours_open_course == "12"
+              ? 0
+              : parseInt(b.hours_open_course)
+            : b.hours_open_course == "12"
+            ? 12
+            : parseInt(b.hours_open_course) + 12;
+
+        if (formatOpen24 < formatFinish24) {
           return -1;
         }
         if (
-          parseInt(a.hours_open_course) === parseInt(b.hours_open_course) &&
+          formatOpen24 === formatFinish24 &&
           parseInt(a.minutes_open_course) < parseInt(b.minutes_open_course)
         ) {
           return -1;
@@ -22,12 +39,25 @@ function ContainerCruses({ courses }) {
     let f_course = 0;
     for (let i = 0; i < newCourses.length - 1; i++) {
       f_course =
-        parseInt(newCourses[i].hours_finish_course) * 60 +
+        (newCourses[i].type_schedule_finish == "1"
+          ? newCourses[i].hours_finish_course == "12"
+            ? 0
+            : parseInt(newCourses[i].hours_finish_course)
+          : newCourses[i].hours_finish_course == "12"
+          ? 12
+          : parseInt(newCourses[i].hours_finish_course) + 12) *
+          60 +
         parseInt(newCourses[i].minutes_finish_course);
       o_course =
-        parseInt(newCourses[i + 1].hours_open_course) * 60 +
+        (newCourses[i + 1].type_schedule_open == "1"
+          ? newCourses[i + 1].hours_open_course == "12"
+            ? 0
+            : parseInt(newCourses[i + 1].hours_open_course)
+          : newCourses[i + 1].hours_open_course == "12"
+          ? 12
+          : parseInt(newCourses[i + 1].hours_open_course) + 12) *
+          60 +
         parseInt(newCourses[i + 1].minutes_open_course);
-
       if (f_course > o_course) {
         newCoursesCrosses.push({
           id: uuidv4(),

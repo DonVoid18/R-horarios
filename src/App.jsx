@@ -18,11 +18,28 @@ function App() {
     return courses
       .filter((course) => course.week_course === numberWeek)
       .sort((a, b) => {
-        if (parseInt(a.hours_open_course) < parseInt(b.hours_open_course)) {
+        let formatOpen24 =
+          a.type_schedule_open == "1"
+            ? a.hours_open_course == "12"
+              ? 0
+              : parseInt(a.hours_open_course)
+            : a.hours_open_course == "12"
+            ? 12
+            : parseInt(a.hours_open_course) + 12;
+        let formatFinish24 =
+          b.type_schedule_open == "1"
+            ? b.hours_open_course == "12"
+              ? 0
+              : parseInt(b.hours_open_course)
+            : b.hours_open_course == "12"
+            ? 12
+            : parseInt(b.hours_open_course) + 12;
+
+        if (formatOpen24 < formatFinish24) {
           return -1;
         }
         if (
-          parseInt(a.hours_open_course) === parseInt(b.hours_open_course) &&
+          formatOpen24 === formatFinish24 &&
           parseInt(a.minutes_open_course) < parseInt(b.minutes_open_course)
         ) {
           return -1;
@@ -55,8 +72,10 @@ function App() {
                     nameCourse={value.name_course}
                     open_c_h={value.hours_open_course}
                     open_c_m={value.minutes_open_course}
+                    type_schedule_open={value.type_schedule_open}
                     finish_c_h={value.hours_finish_course}
                     finish_c_m={value.minutes_finish_course}
+                    type_schedule_finish={value.type_schedule_finish}
                     deleteCourse={deleteCourse}
                   />
                 ))}
@@ -72,8 +91,10 @@ function App() {
                     nameCourse={value.name_course}
                     open_c_h={value.hours_open_course}
                     open_c_m={value.minutes_open_course}
+                    type_schedule_open={value.type_schedule_open}
                     finish_c_h={value.hours_finish_course}
                     finish_c_m={value.minutes_finish_course}
+                    type_schedule_finish={value.type_schedule_finish}
                     deleteCourse={deleteCourse}
                   />
                 ))}
@@ -89,8 +110,10 @@ function App() {
                     nameCourse={value.name_course}
                     open_c_h={value.hours_open_course}
                     open_c_m={value.minutes_open_course}
+                    type_schedule_open={value.type_schedule_open}
                     finish_c_h={value.hours_finish_course}
                     finish_c_m={value.minutes_finish_course}
+                    type_schedule_finish={value.type_schedule_finish}
                     deleteCourse={deleteCourse}
                   />
                 ))}
@@ -106,8 +129,10 @@ function App() {
                     nameCourse={value.name_course}
                     open_c_h={value.hours_open_course}
                     open_c_m={value.minutes_open_course}
+                    type_schedule_open={value.type_schedule_open}
                     finish_c_h={value.hours_finish_course}
                     finish_c_m={value.minutes_finish_course}
+                    type_schedule_finish={value.type_schedule_finish}
                     deleteCourse={deleteCourse}
                   />
                 ))}
@@ -123,8 +148,10 @@ function App() {
                     nameCourse={value.name_course}
                     open_c_h={value.hours_open_course}
                     open_c_m={value.minutes_open_course}
+                    type_schedule_open={value.type_schedule_open}
                     finish_c_h={value.hours_finish_course}
                     finish_c_m={value.minutes_finish_course}
+                    type_schedule_finish={value.type_schedule_finish}
                     deleteCourse={deleteCourse}
                   />
                 ))}
@@ -140,8 +167,10 @@ function App() {
                     nameCourse={value.name_course}
                     open_c_h={value.hours_open_course}
                     open_c_m={value.minutes_open_course}
+                    type_schedule_open={value.type_schedule_open}
                     finish_c_h={value.hours_finish_course}
                     finish_c_m={value.minutes_finish_course}
+                    type_schedule_finish={value.type_schedule_finish}
                     deleteCourse={deleteCourse}
                   />
                 ))}
@@ -157,8 +186,10 @@ function App() {
                     nameCourse={value.name_course}
                     open_c_h={value.hours_open_course}
                     open_c_m={value.minutes_open_course}
+                    type_schedule_open={value.type_schedule_open}
                     finish_c_h={value.hours_finish_course}
                     finish_c_m={value.minutes_finish_course}
+                    type_schedule_finish={value.type_schedule_finish}
                     deleteCourse={deleteCourse}
                   />
                 ))}
