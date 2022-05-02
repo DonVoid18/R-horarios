@@ -1,6 +1,6 @@
 .container_course {
   max-width: 200px;
-  height: 120px;
+  height: 130px;
   background-color: var(--color-5);
 
   border-radius: var(--border-radius-2);
@@ -29,7 +29,6 @@
   text-align: center;
   overflow-wrap: anywhere;
   margin-bottom: 7px;
-  color: #ffc300;
 }
 .time_course{
   font-size: 0.875rem;
